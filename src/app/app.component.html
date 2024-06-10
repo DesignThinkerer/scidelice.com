@@ -1,1 +1,59 @@
-Hello scidélice
+<header>
+    <figure>
+        <a href="#accueil">
+            <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><text x="50%" y="50%" font-size="12" dominant-baseline="central" text-anchor="middle">🧔🏻</text></svg>'
+                alt="scidelice.com" />Scidélice
+        </a>
+    </figure>
+    <form role="search" action="./search/" aria-label="Main nav">
+        <label>
+            <!-- https://www.aditus.io/patterns/breadcrumbs/ -->
+            <nav aria-label="breadcrumbs">
+                <ol>
+                    <li>
+                        <a href="#Accueil" aria-current="location">Accueil</a>
+                        <span aria-hidden="true">/</span>
+                    </li>
+                </ol>
+            </nav>
+        </label>
+        <input type="search" name="q" />
+        <button type="submit"><span class="material-symbols-outlined" aria-hidden="true">search</span></button>
+    </form>
+    <nav>
+        <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="./about">About</a></li>
+            <li><a href="./contact">Contact</a></li>
+        </ul>
+    </nav>
+    <menu>
+        <input type="checkbox" role="switch" title="Toggles light & dark" />
+
+        <button (click)="toggleLogin()">
+            @if (isLoggedIn) {
+            <span class="material-symbols-outlined" aria-hidden="true">logout</span><span>Déconnexion</span>
+            }
+            @else {
+            <span class="material-symbols-outlined" aria-hidden="true">login</span><span>Connexion</span>
+            }
+        </button>
+    </menu>
+</header>
+<main>
+    <section>
+        <article style="--column-span:2;">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?crop=entropyq=80&w=400" alt="" />
+
+            <h2 class="p7">Lorem ipsum dolor sit dolor consectetur</h2>
+            <div class="description">
+                Lorem ipsum dolor sit amet elit dolor consectetur elit
+                dolor amet ande.
+            </div>
+            <div class="read__more">Read more</div>
+        </article>
+    </section>
+</main>
+<footer>
+   <span class="material-symbols-outlined" aria-hidden="true">copyright</span> Scidélice 2024
+</footer>

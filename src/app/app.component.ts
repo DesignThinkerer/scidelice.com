@@ -9,5 +9,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+toggleLogin() {
+  this.isLoggedIn = !this.isLoggedIn;
+}
   title = 'app';
+  isLoggedIn = false;
 }
