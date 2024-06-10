@@ -1,23 +1,78 @@
+@layer animation {
+    .deck {
+        article {
+            transform-origin: 50% 100%;
+            transition: all 0.5s;
+            transform:
+            rotate(calc(var(--offset) * 5deg))
+            translate(calc(var(--offset) * 40cqw/var(--count)),var(--y, -40px));
+            &:hover {--y: -90px;}
+        }
+    }
+}
+
 @layer template {
     :host {
         grid-area: main;
+        height: 100%;
     }
 
-    article{
-        padding: 2rem;
-        .internal:link{
-            margin-block: 1rem;
-            text-decoration: none;
+    main {
+        height: 100%;
+    }
+
+    .deck {
+        height: 100%;
+        display: grid;
+        place-content: center;
+
+        article {
+            border-radius: .5rem;
             outline: solid 1px;
-            display: inline-grid;
-            grid-auto-flow: row;
-            grid-template-columns: max-content min-content;
-            place-items: center;
-            padding: 1rem;
-            gap: 1rem;
-            align-content: center;
-            color: var(--color-link);
+            grid-area: stack;
+            --height: 600px;
+            height: var(--height);
+            --aspect-ratio: 2.75/4.75;
+            width: calc(var(--height) * var(--aspect-ratio));
+            padding: 2rem;
+            background-color: var(--color-bg-default);
+            --offset: calc(((1 - var(--count))/2) + var(--index));
+
+            figure {
+                margin: 0;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    aspect-ratio: 1;
+                }
+
+                figcaption {
+                    font-style: italic;
+                }
+            }
+
+            p {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
         }
     }
 
+}
+
+.internal:link {
+    margin-block-start: 1rem;
+    text-decoration: none;
+    outline: solid 1px;
+    display: inline-grid;
+    grid-auto-flow: row;
+    grid-template-columns: max-content min-content;
+    place-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    align-content: center;
+    color: var(--color-link);
 }

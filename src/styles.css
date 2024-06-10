@@ -61,8 +61,6 @@
 
             /* Decorations */
             --border-default: solid var(--border-size);
-
-
         }
 
         body {
