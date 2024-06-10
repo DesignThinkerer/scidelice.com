@@ -1,0 +1,23 @@
+@layer template {
+    :host {
+        grid-area: main;
+    }
+
+    article{
+        padding: 2rem;
+        .internal:link{
+            margin-block: 1rem;
+            text-decoration: none;
+            outline: solid 1px;
+            display: inline-grid;
+            grid-auto-flow: row;
+            grid-template-columns: max-content min-content;
+            place-items: center;
+            padding: 1rem;
+            gap: 1rem;
+            align-content: center;
+            color: var(--color-link);
+        }
+    }
+
+}

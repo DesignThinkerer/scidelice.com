@@ -19,164 +19,134 @@
         color: SelectedItem;
         outline: var(--border-default) SelectedItem;
     }
-}
 
-
-
-@layer theme {
-    :root {
-        font-display: swap;
-        /* avoid FOIT */
-
-        /* https://www.w3.org/TR/css-fonts-4/#generic-font-families */
-        font-family: Segoe UI, system-ui;
-
-        --nav-padding: 1rem;
-        --border-size: 1px;
-
-        /* https://www.w3.org/TR/css-color-4/#css-system-colors */
-
-        --color-accent: light-dark(slategray, orange);
-        --color-default: light-dark(hsl(0, 0%, 6%), white);
-        --color-bg-default: light-dark(white, hsl(0, 0%, 6%));
-        --color-bg-article: light-dark(hsl(0, 0%, 96%), hsl(0, 0%, 19%));
-        --color-link: light-dark(blue, lightblue);
-
-        /* Decorations */
-        --border-default: solid var(--border-size);
-
-
-    }
-
-    body {
-        background: Canvas;
-        color: CanvasText;
-        font-family: var(--font);
-        margin: 0;
-        min-height: 100vh;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        text-wrap: balance;
-    }
-
-    p {
-        text-wrap: pretty;
-    }
-
-    button {
-        font-size: large;
-        appearance: none;
-        border-radius: 1ch;
-        align-items: center;
-        display: flex;
-        gap: 1ch;
-
-        [class*=symbols] {
-            font-size: 1lh;
-        }
-    }
-
-
-}
-
-
-@layer template {
-    header {
-        align-items: center;
-        top: 0;
-        position: sticky;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        border-bottom: solid var(--border-size) var(--color-accent);
-        background: Canvas;
-        color: CanvasText;
-        justify-content: space-evenly;
-    }
-
-    footer{
-        outline:solid 1px;
-        height:100px;
-        align-content: center;
-    }
-}
-
-@layer components {
-
-    /* Theme switcher */
-    :root {
-        color-scheme: dark light;
-        --icon-light: "\263C";
-        --icon-dark: "\263D";
-
-        @media not (prefers-color-scheme: dark) {
-            --icon-switch-checked: var(--icon-dark);
-            --icon-switch-unchecked: var(--icon-light);
-
-            &:has([role="switch"]:checked) {
-                color-scheme: dark;
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            --icon-switch-checked: var(--icon-light);
-            --icon-switch-unchecked: var(--icon-dark);
-
-            &:has([role="switch"]:checked) {
-                color-scheme: light;
-            }
-        }
-    }
-
-    [role="switch"] {
-        all: unset;
+    button{
         cursor: pointer;
-        font-size: var(--target-size-enhanced);
-        &:checked {
-            --_icon-state: var(--icon-switch-checked);
-        }
-      
-        &::before {
-            display: inline-block;
-            text-align: center;
-            align-content: center;
-            aspect-ratio: 1;
-            inline-size: 1em;
-            content: var(--_icon-state,var(--icon-switch-unchecked));
-        }
-    }
-
-    [role="search"] {
-        display: flex;
-        gap: .5rem;
-        flex:0;
-        transition: flex .2s ease-in-out;
-
-        &:focus-within {
-            flex: 1;
-        }
-
-        & [type="submit"] {
-            background: unset;
-            border: unset;
-        }
-
-        & input {
-            border-radius: 5pt;
-            border-width: 1px;
-            border: var(--border-default);
-            flex: 1;
-            padding: .5ch;
-        }
-
-        & label {
-            inline-size: max-content;
-        }
     }
 }
+
+
+
+    @layer theme {
+        :root {
+            font-display: swap;
+            /* avoid FOIT */
+
+            /* https://www.w3.org/TR/css-fonts-4/#generic-font-families */
+            font-family: Segoe UI, system-ui;
+
+            --nav-padding: 1rem;
+            --border-size: 1px;
+
+            --font-size-0: 0;
+            --font-size-2: .2rem;
+            --font-size-4: .4rem;
+            --font-size-6: .6rem;
+            --font-size-8: .8rem;
+            --font-size-10: 1rem;
+            --font-size-12: 1.2rem;
+            --font-size-14: 1.4rem;
+            --font-size-16: 1.6rem;
+            --font-size-18: 1.8rem;
+            --font-size-20: 2rem;
+
+
+            /* https://www.w3.org/TR/css-color-4/#css-system-colors */
+
+            --color-accent: light-dark(slategray, orange);
+            --color-default: light-dark(hsl(0, 0%, 6%), white);
+            --color-bg-default: light-dark(white, hsl(0, 0%, 6%));
+            --color-bg-article: light-dark(hsl(0, 0%, 96%), hsl(0, 0%, 19%));
+            --color-link: light-dark(blue, lightblue);
+
+            /* Decorations */
+            --border-default: solid var(--border-size);
+
+
+        }
+
+        body {
+            background: Canvas;
+            color: CanvasText;
+            font-family: var(--font);
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-wrap: balance;
+        }
+
+        p {
+            text-wrap: pretty;
+        }
+
+        button {
+            font-size: large;
+            appearance: none;
+            border-radius: 1ch;
+            align-items: center;
+            display: flex;
+            gap: 1ch;
+
+            [class*=symbols] {
+                font-size: 1lh;
+            }
+        }
+
+
+    }
+
+
+
+    @layer components {
+
+        /* Theme switcher */
+        :root {
+            color-scheme: dark light;
+            --icon-light: "\263C";
+            --icon-dark: "\263D";
+
+            @media not (prefers-color-scheme: dark) {
+                --icon-switch-checked: var(--icon-dark);
+                --icon-switch-unchecked: var(--icon-light);
+
+                &:has([role="switch"]:checked) {
+                    color-scheme: dark;
+                }
+            }
+
+            @media (prefers-color-scheme: dark) {
+                --icon-switch-checked: var(--icon-light);
+                --icon-switch-unchecked: var(--icon-dark);
+
+                &:has([role="switch"]:checked) {
+                    color-scheme: light;
+                }
+            }
+        }
+
+        [role="switch"] {
+            all: unset;
+            cursor: pointer;
+            font-size: var(--target-size-enhanced);
+
+            &:checked {
+                --_icon-state: var(--icon-switch-checked);
+            }
+
+            &::before {
+                display: inline-block;
+                text-align: center;
+                align-content: center;
+                aspect-ratio: 1;
+                inline-size: 1em;
+                content: var(--_icon-state, var(--icon-switch-unchecked));
+            }
+        }
+    }
