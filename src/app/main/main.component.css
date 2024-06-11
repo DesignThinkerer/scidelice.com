@@ -1,16 +1,3 @@
-@layer animation {
-    .deck {
-        article {
-            transform-origin: 50% 100%;
-            transition: all 0.5s;
-            transform:
-            rotate(calc(var(--offset) * 5deg))
-            translate(calc(var(--offset) * 40cqw/var(--count)),var(--y, -40px));
-            &:hover {--y: -90px;}
-        }
-    }
-}
-
 @layer template {
     :host {
         grid-area: main;
@@ -22,21 +9,32 @@
     }
 
     .deck {
-        height: 100%;
         display: grid;
+        height: 100%;
         place-content: center;
 
         article {
-            border-radius: .5rem;
-            outline: solid 1px;
-            grid-area: stack;
-            --height: 600px;
-            height: var(--height);
+            --angle:5deg;
             --aspect-ratio: 2.75/4.75;
-            width: calc(var(--height) * var(--aspect-ratio));
-            padding: 2rem;
-            background-color: var(--color-bg-default);
+            --offset-rotation:calc(var(--offset) * var(--angle));
+            --offset-translation-x:calc(var(--offset) * 40cqw/var(--count));
+            --offset-translation-y:var(--y, -40px);
+            --offset-translation:var(--offset-translation-x), var(--offset-translation-y);
             --offset: calc(((1 - var(--count))/2) + var(--index));
+            
+            background-color: var(--color-bg-default);
+            border-radius: .5rem;
+            grid-area: stack;
+            height: 600px;
+            max-height: 50vh;
+            outline: solid 1px;
+            padding: 2rem;
+            transform-origin: 50% 100%;
+            transform:rotate(var(--offset-rotation)) translate(var(--offset-translation));
+            transition: all 0.5s;
+            width: calc(min(600px,50vh) * var(--aspect-ratio));
+
+            &:hover {--y: -90px;}
 
             figure {
                 margin: 0;
