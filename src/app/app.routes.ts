@@ -6,7 +6,7 @@ export const routes: Routes = [
         path: 'profile/:id',
         redirectTo: (urlInfo) => {
             console.log(urlInfo);
-            //must return a string or a UrlTree
+            
             return '/'; 
         },
         pathMatch: 'full'
