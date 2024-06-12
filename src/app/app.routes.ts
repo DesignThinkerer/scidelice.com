@@ -7,12 +7,12 @@ export const routes: Routes = [
         redirectTo: (urlInfo) => {
             console.log(urlInfo);
             //must return a string or a UrlTree
-            return '/accueil'; 
+            return '/'; 
         },
         pathMatch: 'full'
     },
     {
-        path: 'accueil',
+        path: '',
         component: MainComponent,
         data: {
             title: 'Bienvenue'
