@@ -1,0 +1,13 @@
+@layer template {
+    :host {
+        grid-area: footer;
+    }
+
+    footer {
+        outline: solid 1px;
+        height: 100px;
+        display: flex;
+        place-content: center;
+        align-items: center;
+    }
+}
