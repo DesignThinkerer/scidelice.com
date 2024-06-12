@@ -12,5 +12,5 @@ import { MainComponent } from "./main/main.component";
     imports: [RouterOutlet, HeaderComponent, FooterComponent, MainComponent]
 })
 export class AppComponent {
-
+title = 'Scidélice, le site pour apprendre à cuisiner avec science!';
 }
