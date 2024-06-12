@@ -36,6 +36,10 @@
 
             &:hover {--y: -90px;}
 
+            h2{
+                text-wrap: balance;
+            }
+
             figure {
                 margin: 0;
 
