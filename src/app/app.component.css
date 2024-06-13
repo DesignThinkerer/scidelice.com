@@ -84,4 +84,13 @@
             inline-size: max-content;
         } 
     }
+
+    footer {
+        grid-area: footer;
+        outline: solid 1px;
+        height: 100px;
+        display: flex;
+        place-content: center;
+        align-items: center;
+    }
 }
