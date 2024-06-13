@@ -1,24 +1,12 @@
-import { ResolveFn, Routes } from "@angular/router";
-import { ContactComponent } from "./pages/contact/contact.component";
-import { HomeComponent } from "./pages/home/home.component";
-import { IngredientsComponent } from "./pages/ingredients/ingredients.component";
-import { NotFoundComponent } from "./pages/not-found/not-found.component";
-import { RecipesComponent } from "./pages/recipes/recipes.component";
-import { SignupComponent } from "./pages/signup/signup.component";
+import { Routes } from "@angular/router";
 import { ErrorHandler, inject } from "@angular/core";
-import { UserComponent } from "./pages/user/user.component";
-import { AboutComponent } from "./pages/about/about.component";
-import { DocumentationComponent } from "./pages/about/documentation/documentation.component";
-import { AuthorComponent } from "./pages/about/author/author.component";
 
 
-//https://angular.dev/guide/routing/common-router-tasks#resolving-data-in-a-nested-route
-// const resolveDocumentationTitle: ResolveFn<string> = () => Promise.resolve('Documentation'); 
-
+//lazy loading https://blog.angular-university.io/angular-standalone-components/
 export const routes: Routes = [
-    { path: 'contact',  title:'Contact', component: ContactComponent },
-    { path: 'home', title: 'Accueil', component: HomeComponent },
-    { path: 'ingredients', title:'Ingrédients', component: IngredientsComponent },
+    { path: 'contact', title: 'Contact', loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent) },
+    { path: 'home', title: 'Accueil', loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent) },
+    { path: 'ingredients', title: 'Ingrédients', loadComponent: () => import('./pages/ingredients/ingredients.component').then(m => m.IngredientsComponent) },
     // https://angular.dev/guide/routing/common-router-tasks#setting-up-redirects
     {
         path: "user",
@@ -35,20 +23,20 @@ export const routes: Routes = [
         },
     },
     {
-        path: "user/:userId", title: 'Utilisateur', component: UserComponent,
+        path: "user/:userId", title: 'Utilisateur', loadComponent: () => import('./pages/user/user.component').then(m => m.UserComponent),
     },
-    { path: 'recipes', title:'Recettes', component: RecipesComponent },
-    { path: 'signup', title:'Inscription',component: SignupComponent },
+    { path: 'recipes', title: 'Recettes', loadComponent: () => import('./pages/recipes/recipes.component').then(m => m.RecipesComponent) },
+    { path: 'signup', title: 'Inscription', loadComponent: () => import('./pages/signup/signup.component').then(m => m.SignupComponent) },
     {
-        path: 'about', title:'A propos',component: AboutComponent,
+        path: 'about', title: 'A propos', loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent),
         //https://angular.dev/guide/routing/common-router-tasks#nesting-routes
         children: [
             // { path: 'documentation', title: resolveDocumentationTitle, component: DocumentationComponent },
-            { path: 'documentation', title:'Documentation', component: DocumentationComponent },
-            { path: 'author', title:'Autheur', component: AuthorComponent }
+            { path: 'documentation', title: 'Documentation', loadComponent: () => import('./pages/about/documentation/documentation.component').then(m => m.DocumentationComponent) },
+            { path: 'author', title: 'Autheur', loadComponent: () => import('./pages/about/author/author.component').then(m => m.AuthorComponent) }
         ]
     },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: '**', component: NotFoundComponent } //https://angular.dev/guide/routing/common-router-tasks#setting-up-wildcard-routes
+    { path: '**', loadComponent: () => import('./pages/not-found/not-found.component').then(m => m.NotFoundComponent) } //https://angular.dev/guide/routing/common-router-tasks#setting-up-wildcard-routes
 ];
 
