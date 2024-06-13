@@ -9,8 +9,7 @@ import { HomeComponent } from "./home/home.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, HeaderComponent, FooterComponent, HomeComponent],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [RouterOutlet, HeaderComponent, FooterComponent, HomeComponent]
 })
 export class AppComponent {
 title = 'Scidélice, le site pour apprendre à cuisiner avec science!';
