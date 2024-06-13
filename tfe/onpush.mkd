@@ -1,0 +1,28 @@
+https://angular.dev/best-practices/skipping-subtrees#using-onpush
+
+
+Si l'utilisateur intéragis avec un composant en dehors des enfants de MainComponent (OnPush), seul les composants surlignés seront vérifiés: 
+
+:::mermaid
+graph TD
+    AppComponent --- MainComponent
+    AppComponent --- HeaderComponent
+    MainComponent --- DetailsComponent
+    MainComponent --- LoginComponent
+    HeaderComponent --- ButtonComponent
+    HeaderComponent --- SearchComponent
+    Event --- SearchComponent
+
+    %% Styling for the checked components
+    class AppComponent,HeaderComponent,SearchComponent,ButtonComponent checked
+
+    %% Styles
+    classDef checked stroke:mark;
+
+    %% Labels with OnPush indication
+    MainComponent["MainComponent (OnPush)"]
+    LoginComponent["LoginComponent (OnPush)"]
+
+    %% Asymmetric shape for Event
+    Event>Event]
+:::
