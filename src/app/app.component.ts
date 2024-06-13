@@ -13,4 +13,8 @@ import { HomeComponent } from "./home/home.component";
 })
 export class AppComponent {
 title = 'Scidélice, le site pour apprendre à cuisiner avec science!';
+toggleLogin() {
+    this.isLoggedIn = !this.isLoggedIn;
+  }
+    isLoggedIn = false;
 }
