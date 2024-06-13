@@ -1,1 +1,13 @@
-<p>home works!</p>
+<section class="deck" [style]='"--count:"+ (articles.length)'>
+    @for(article of articles; track article){
+        <article [style]='"--index:"+ $index'>
+            <h2>{{ article.title }}</h2>
+            <figure>
+                <img src="{{ article.img }}" alt="{{ article.img_alt }}" />
+                <figcaption>{{ article.caption }}</figcaption>
+            </figure>
+            <p>{{ article.summary }}</p>
+            <a href="{{ article.url }}" class="internal"><span>Read more</span><span class="material-symbols-outlined">open_in_new</span></a>
+        </article>
+    }
+</section>
