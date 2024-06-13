@@ -1,7 +1,7 @@
 <header>
     <h1>
         <figure>
-            <a href="#accueil">
+            <a routerLink="/">
                 <!-- <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><text x="50%" y="50%" font-size="12" dominant-baseline="central" text-anchor="middle">🧔🏻</text></svg>'
                     alt="scidelice.com" /> -->
                     <img src="/logo.png" alt="logo scidelice.com">{{ title }}
@@ -15,9 +15,9 @@
     </form>
 
     <nav>
-        <a routerLink="/">Home</a>
-        <a routerLink="/about">About</a>
-        <a routerLink="/contact">Contact</a>
+        <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+        <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
+        <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
     </nav>
 
     <menu>
