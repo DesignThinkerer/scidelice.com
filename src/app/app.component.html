@@ -16,8 +16,6 @@
 
     <nav>
         <a routerLink="/">Home</a>
-        <a routerLink="/login">Login</a>
-        <a routerLink="/signup">Signup</a>
         <a routerLink="/about">About</a>
         <a routerLink="/contact">Contact</a>
     </nav>
@@ -27,16 +25,15 @@
 
         <button (click)="toggleLogin()" title="{{ isLoggedIn ? 'Déconnexion':'Connexion' }}">
             @if (isLoggedIn) {
-            <span class="material-symbols-outlined" aria-hidden="true">logout</span>
+                <a routerLink="/logout" class="material-symbols-outlined" aria-hidden="true">logout</a>
             }
             @else {
-            <span class="material-symbols-outlined" aria-hidden="true">login</span>
+                <a routerLink="/login" class="material-symbols-outlined" aria-hidden="true">login</a>
             }
         </button>
     </menu>
 </header>
 <main>
-    <h4>Routes Result</h4>
     <router-outlet></router-outlet>
 </main>
 <footer>
