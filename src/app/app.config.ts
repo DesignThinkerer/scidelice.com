@@ -23,7 +23,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(
       routes, 
       withComponentInputBinding(), //https://angular.dev/guide/routing/common-router-tasks#add-withcomponentinputbinding
-      withPreloading(PreloadAllModules) 
+      // withPreloading(PreloadAllModules) 
       // Note: si on a beaucoup de modules à charger, cela peut causer du lag. Dans ce cas, on peut utiliser le Quicklink preloading, voir: https://web.dev/articles/route-preloading-in-angular#using_the_preloadallmodules_strategy
 
       //https://angular.dev/guide/routing/common-router-tasks#preloading-lazy-loaded-modules
