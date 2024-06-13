@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
 import { ErrorHandler, inject } from "@angular/core";
 
+// Pour le preloading de données, voir: https://angular.dev/guide/ngmodules/lazy-loading#preloading-component-data
 
 //lazy loading https://blog.angular-university.io/angular-standalone-components/
 export const routes: Routes = [
