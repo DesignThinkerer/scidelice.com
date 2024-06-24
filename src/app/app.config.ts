@@ -1,8 +1,9 @@
-import { ApplicationConfig, Injectable, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { ApplicationConfig, Injectable, provideExperimentalZonelessChangeDetection, isDevMode } from '@angular/core';
 import { PreloadAllModules, RouterStateSnapshot, TitleStrategy, provideRouter, withComponentInputBinding, withPreloading } from '@angular/router';
 
 import { routes } from './app.routes';
 import { Title, provideClientHydration } from '@angular/platform-browser';
+import { provideServiceWorker } from '@angular/service-worker';
 
 @Injectable({providedIn: 'root'})
 export class TemplatePageTitleStrategy extends TitleStrategy {
@@ -30,6 +31,9 @@ export const appConfig: ApplicationConfig = {
     ), 
     { provide: TitleStrategy, useClass: TemplatePageTitleStrategy }, // https://angular.dev/guide/routing/common-router-tasks#setting-the-page-title
 
-    provideClientHydration()
+    provideClientHydration(), provideServiceWorker('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            registrationStrategy: 'registerWhenStable:30000'
+          })
   ]
 };
