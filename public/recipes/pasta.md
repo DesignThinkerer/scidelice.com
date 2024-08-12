@@ -1,5 +1,10 @@
 Source: https://www.americastestkitchen.com/articles/7595-how-to-make-fresh-pasta-without-a-machine
 
+todo: improve this article with :
+
+- http://www.ramenchemistry.com/blog/tag/Ramen+101
+- https://youtu.be/HNJEx0XM0VM
+
 ---
 
 # Technique #77: Fresh Pasta from Scratch
