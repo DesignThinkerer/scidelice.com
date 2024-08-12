@@ -1,7 +1,8 @@
 Article based on the video [Controlling Light Using Holograms And Photographic Film
 ](https://youtu.be/atg1PN1sZfg)
 
-v0
+version: 0
+status: draft
 ---
 
 A diffraction grating is a piece of plastic with numerous tiny lines etched onto its surface.
