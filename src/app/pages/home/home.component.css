@@ -2,6 +2,7 @@
     display: grid;
     height: 100%;
     place-content: center;
+    content-visibility: auto;
 
     article {
         --angle:5deg;
