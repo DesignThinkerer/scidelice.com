@@ -1,7 +1,8 @@
 :host {
     display: grid;
-    min-height:100vh;
-    grid:"header" min-content "main" 1fr "footer" min-content / 1fr;
+    min-height: 100vh;
+    grid:
+        "header" max-content "main" 1fr "footer" max-content / 1fr;
 }
 
 header {
@@ -10,7 +11,7 @@ header {
     position: sticky;
     top: 0;
 
-    gap:1rem;
+    gap: 1rem;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
@@ -18,28 +19,29 @@ header {
     border-bottom: solid var(--border-size) var(--color-accent);
 
     figure {
-        img{
+        img {
             background-color: var(--color-default);
             border-radius: 1lh;
-            padding:3px;
+            padding: 3px;
             height: 1lh;
-            width:1lh;
+            width: 1lh;
             object-fit: contain;
         }
     }
+
     h1 {
-        *{
+        * {
             display: flex;
             align-items: center;
-            gap:1rem;
+            gap: 1rem;
             font-size: var(--font-size-20);
         }
     }
 }
 
-nav{
+nav {
     display: flex;
-    gap:1rem;
+    gap: 1rem;
 }
 
 a {
@@ -49,19 +51,21 @@ a {
     &:hover {
         color: var(--color-accent);
     }
+
     &:visited {
         color: var(--color-link);
     }
 }
 
-menu{
+menu {
     display: flex;
     padding: 0;
     justify-content: center;
-    & button{
+
+    & button {
         background-color: transparent;
         border: none;
-     }
+    }
 }
 
 
@@ -70,7 +74,7 @@ menu{
     flex-grow: 1;
     display: flex;
     justify-content: end;
-    
+
 
     & [type="submit"] {
         background: unset;
@@ -84,23 +88,28 @@ menu{
         transition: flex .2s ease-in-out;
         flex: 0;
         padding: .5ch;
-        &:focus{
-            flex:1;
+
+        &:focus {
+            flex: 1;
         }
     }
 
     & label {
         inline-size: max-content;
-    } 
+    }
 }
 
 footer {
     grid-area: footer;
-    outline: solid 1px;
-    height: 100px;
-    display: flex;
-    place-content: center;
-    align-items: center;
+    border-block-start: solid 1px;
+    grid-auto-flow: column;
+    display: grid;
+    grid-auto-columns: fit-content;
+    align-content: center;
+    padding-inline:50px;
+    p{
+        max-inline-size: 50ch;
+    }
 }
 
 main {
