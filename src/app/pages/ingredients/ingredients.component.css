@@ -1,0 +1,18 @@
+.form-add-ingredient{
+    display:grid;
+    grid-template-columns: max-content 1fr;
+    gap:1rem;
+    label{
+        display:grid;
+        grid-template-columns: subgrid;
+        grid-column: 1/-1;
+    }
+    span{
+        text-align: right;
+    }
+    button{
+        grid-column: 2;
+        width:fit-content;
+        margin-inline-start: auto;
+    }
+}

@@ -1,1 +1,30 @@
-<p>ingredients works!</p>
+<h1>Ajouter un ingrédient</h1>
+
+<form action="" class="form-add-ingredient">
+    <label><span>Nom</span><input type="text"/></label>
+    <label><span>Localité</span><select name="locality">
+        <option value="">--Choisir une localité--</option>
+        <option value="BE">Belgique</option>
+        <option value="UE">Union européenne</option>
+        <option value="W">Monde</option>
+    </select></label>
+    <label><span>Saison de recolte</span>
+        <select name="season">
+            <option value="">--Choisir une saison--</option>
+            <option value="sprint">printemp</option>
+            <option value="summer">été</option>
+            <option value="autumn">automne</option>
+            <option value="winter">hiver</option>
+        </select>
+    </label>
+    <label><span>Type</span>
+        <select name="type">
+            <option value="">--Choisir un type d'ingrédient--</option>
+            <option value="fruit">fruit</option>
+            <option value="vegetable">légume</option>
+            <option value="spice">épice</option>
+            <option value="other">autre</option>
+        </select>
+    </label>
+    <button type="submit">Enregistrer l'ingrédient</button>
+</form>
