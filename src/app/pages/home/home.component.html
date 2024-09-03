@@ -1,9 +1,20 @@
 <section>
     HERO: Apprenons ensemble, une bouchée à la fois!
-    <form role="search" action="./search/" aria-label="Hero nav">
-        <input type="search" name="q" title="Saisir une recherche" />
-        <button type="submit" title="Lancer une recherche"><span class="material-symbols-outlined" aria-hidden="true">search</span></button>
-    </form>
+
+    <form role="search" action="./search/" aria-label="Hero nav" (submit)="$event.preventDefault()">
+        <input
+          #userInput
+          (input)="userInputValue = userInput.value; filterArticles()"
+          type="search"
+          name="q"
+          title="Saisir une recherche"
+        />
+        <button type="submit" title="Lancer une recherche">
+          <span class="material-symbols-outlined" aria-hidden="true">search</span>
+        </button>
+      </form>
+      {{ articles.length }} articles trouvés
+
 </section>
 <section>
     Recette du jour
@@ -29,17 +40,21 @@
     }
 </section>
 -->
+
+<!-- Note: Ajouter content-visibility: auto; pour charger la liste plus rapidemment -->
 <section>
-    Articles du jour (cartes)
-     @for(article of articles; track article){
+    @for (article of filteredArticles; track article) {
         <article [style]='"--index:"+ $index'>
-            <h2>{{ article.title }}</h2>
-            <figure>
-                <img src="{{ article.img }}" alt="{{ article.img_alt }}" />
-                <figcaption>{{ article.caption }}</figcaption>
-            </figure>
-            <p>{{ article.summary }}</p>
-            <a href="{{ article.url }}" class="internal"><span>Read more</span><span class="material-symbols-outlined">open_in_new</span></a>
+          <h2>{{ article.title }}</h2>
+          <figure>
+            <img src="{{ article.img }}" alt="{{ article.img_alt }}" />
+            <figcaption>{{ article.caption }}</figcaption>
+          </figure>
+          <p>{{ article.summary }}</p>
+          <a href="{{ article.url }}" class="internal">
+            <span>Read more</span><span class="material-symbols-outlined">open_in_new</span>
+          </a>
         </article>
-    }
+      }
+      
 </section>
