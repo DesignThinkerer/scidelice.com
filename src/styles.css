@@ -25,8 +25,6 @@
     }
 }
 
-
-
     @layer theme {
         :root {
             font-display: swap;
@@ -53,10 +51,12 @@
 
             /* https://www.w3.org/TR/css-color-4/#css-system-colors */
 
+            
+            
             --color-accent: light-dark(slategray, orange);
-            --color-default: light-dark(hsl(0, 0%, 6%), white);
-            --color-bg-default: light-dark(white, hsl(0, 0%, 6%));
-            --color-bg-article: light-dark(hsl(0, 0%, 96%), hsl(0, 0%, 19%));
+            --color-default: light-dark(hsl(200, 38%, 6%), hsl(35, 57%, 82%));
+            --color-bg-default: light-dark(hsl(35, 57%, 82%), hsl(200, 38%, 6%));
+            --color-bg-article: light-dark(hsl(35, 57%, 82%), hsl(0, 0%, 19%));
             --color-link: light-dark(blue, lightblue);
 
             /* Decorations */
@@ -64,11 +64,11 @@
         }
 
         body {
-            background: Canvas;
-            color: CanvasText;
+            background: var(--color-bg-default);
+            color: var(--color-default);
             font-family: var(--font);
             margin: 0;
-            min-height: 100vh;
+            min-height: 100dvh;
         }
 
         h1,

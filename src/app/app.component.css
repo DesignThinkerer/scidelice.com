@@ -15,8 +15,17 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     border-bottom: solid var(--border-size) var(--color-accent);
-    background: Canvas;
-    color: CanvasText;
+
+    figure {
+        img{
+            background-color: var(--color-default);
+            border-radius: 1lh;
+            padding:3px;
+            height: 1lh;
+            width:1lh;
+            object-fit: contain;
+        }
+    }
     h1 {
         *{
             display: flex;
