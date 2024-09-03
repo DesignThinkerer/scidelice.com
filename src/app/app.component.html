@@ -1,12 +1,12 @@
-<header>
+<header role="banner">
+    <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
     <figure>
-        <a routerLink="/">
-            <!-- <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><text x="50%" y="50%" font-size="12" dominant-baseline="central" text-anchor="middle">🧔🏻</text></svg>'
-                alt="scidelice.com" /> -->
             <img src="/logo-minimal.svg" alt="logo scidelice.com" loading="eager">
-            <!-- {{ title }} -->
-        </a>
+            <figcaption class="tagline">
+                {{ title }}
+            </figcaption>
     </figure>
+</a>
 
     <form role="search" action="./search/" aria-label="Main nav">
         <input type="search" name="q" title="Saisir une recherche" />
@@ -14,11 +14,52 @@
                 aria-hidden="true">search</span></button>
     </form>
 
+    <nav aria-label="Scidélice">
+        <ul class="menubar-navigation" role="menubar" aria-label="Scidélice">
+            <li role="none">
+                <a role="menuitem" href="#home">
+                  Home
+                </a>
+              </li>
+        </ul>
+    </nav>
+
     <nav>
-        <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Accueil</a>
+        <ul>
+            <fieldset>
+                <legend>Choisir un volet:</legend>
+                <div>
+                    <input type="radio" id="huey" name="drone" value="huey" checked />
+                    <label for="huey">Huey</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="dewey" name="drone" value="dewey" />
+                    <label for="dewey">Dewey</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="louie" name="drone" value="louie" />
+                    <label for="louie">Louie</label>
+                </div>
+            </fieldset>
+        </ul>
+        <section id="outils">
+
+        </section>
+        <section id="decks">
+
+        </section>
+        <section id="a-propos">
+
+        </section>
+        <section id="profil">
+
+        </section>
+        <!-- 
         <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">À propos</a>
         <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
-        <a routerLink="/ingredients" routerLinkActive="active" ariaCurrentWhenActive="page">Ingrédients</a>
+        <a routerLink="/ingredients" routerLinkActive="active" ariaCurrentWhenActive="page">Ingrédients</a> -->
     </nav>
 
     <menu>
@@ -41,9 +82,10 @@
     <span>
         <h3>A propos de nous</h3>
         <p>
-            Notre mission chez Scidélice est de rendre l'apprentissage de la cuisine ludique et enrichissant. Nous offrons
+            Notre mission chez Scidélice est de rendre l'apprentissage de la cuisine ludique et enrichissant. Nous
+            offrons
             aux passionnés de la cuisine de tous horizons les moyens de se familiariser avec les principes scientifiques
-            derrière la cuisine en partageant des connaissances et des astuces culinaires basées sur la science.    
+            derrière la cuisine en partageant des connaissances et des astuces culinaires basées sur la science.
         </p>
     </span>
     <span>

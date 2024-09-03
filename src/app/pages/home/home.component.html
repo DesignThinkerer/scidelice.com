@@ -1,13 +1,13 @@
 <section>
-    HERO: Apprenons ensemble, une bouchée à la fois!
-
+    <!-- Alternative tagline: Apprenons ensemble, une bouchée à la fois! -->
+    <h2>Découvrer une sélection de <a href="">recettes</a>, <a href="">techniques</a>, <a href="">principes</a>, et plus encore!</h2>
     <form role="search" action="./search/" aria-label="Hero nav" (submit)="$event.preventDefault()">
         <input
           #userInput
-          (input)="userInputValue = userInput.value; filterArticles()"
+          (input)="userInputValue=userInput.value; filterArticles()"
           type="search"
           name="q"
-          title="Saisir une recherche"
+          title="Cherchez par ingrédient, outil, astuce,.."
         />
         <button type="submit" title="Lancer une recherche">
           <span class="material-symbols-outlined" aria-hidden="true">search</span>
