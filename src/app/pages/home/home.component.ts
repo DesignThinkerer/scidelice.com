@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, input, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { ArticleService } from '../../article.service';
 @Component({
@@ -9,6 +9,8 @@ import { ArticleService } from '../../article.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  //consider using Signal inputs to access values from children component
+  //https://angular.dev/guide/signals
   
   articleService = inject(ArticleService);
 
