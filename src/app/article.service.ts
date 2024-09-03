@@ -5,6 +5,8 @@ import { ArticleModel } from './models/article.model';
   providedIn: 'root'
 })
 
+//Make a request to API
+
 export class ArticleService {
   articles= [
       {
