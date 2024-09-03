@@ -1,9 +1,18 @@
 <section>
-    HERO
+    HERO: Apprenons ensemble, une bouchée à la fois!
 </section>
+<section>
+    Recette du jour
+</section>
+<section>
+    Idées frigo
+</section>
+<section>
+    Quizinnez!
+</section>
+<!-- 
 <section class="deck" [style]='"--count:"+ (articles.length)'>
-    Recettes du jour
-    <!-- @for(article of articles; track article){
+ @for(article of articles; track article){
         <article [style]='"--index:"+ $index'>
             <h2>{{ article.title }}</h2>
             <figure>
@@ -13,11 +22,20 @@
             <p>{{ article.summary }}</p>
             <a href="{{ article.url }}" class="internal"><span>Read more</span><span class="material-symbols-outlined">open_in_new</span></a>
         </article>
-    } -->
+    }
 </section>
+-->
 <section>
-    Idées frigo
-</section>
-<section>
-    Quizinnez!
+    Articles du jour (cartes)
+     @for(article of articles; track article){
+        <article [style]='"--index:"+ $index'>
+            <h2>{{ article.title }}</h2>
+            <figure>
+                <img src="{{ article.img }}" alt="{{ article.img_alt }}" />
+                <figcaption>{{ article.caption }}</figcaption>
+            </figure>
+            <p>{{ article.summary }}</p>
+            <a href="{{ article.url }}" class="internal"><span>Read more</span><span class="material-symbols-outlined">open_in_new</span></a>
+        </article>
+    }
 </section>
