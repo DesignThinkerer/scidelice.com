@@ -9,6 +9,8 @@ export const routes: Routes = [
     { path: 'home', title: 'Accueil', loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent) },
     { path: 'ingredients', title: 'Ingrédients', loadComponent: () => import('./pages/ingredients/ingredients.component').then(m => m.IngredientsComponent) },
     // https://angular.dev/guide/routing/common-router-tasks#setting-up-redirects
+    { path: 'signup', title: 'Inscription', loadComponent: () => import('./pages/signup/signup.component').then(m => m.SignupComponent) },
+    { path: 'login', title: 'Connexion', loadComponent: () => import('./pages/login/login.component').then(m => m.LoginComponent) },
     {
         path: "user",
         title: 'Redirection vers utilisateur',
@@ -19,7 +21,7 @@ export const routes: Routes = [
                 return `/user/${userIdParam}`;
             } else {
                 errorHandler.handleError(new Error('Attempted navigation to user page without user ID.'));
-                return `/not-found`;
+                return `/signup`;
             }
         },
     },
@@ -27,7 +29,6 @@ export const routes: Routes = [
         path: "user/:userId", title: 'Utilisateur', loadComponent: () => import('./pages/user/user.component').then(m => m.UserComponent),
     },
     { path: 'recipes', title: 'Recettes', loadComponent: () => import('./pages/recipes/recipes.component').then(m => m.RecipesComponent) },
-    { path: 'signup', title: 'Inscription', loadComponent: () => import('./pages/signup/signup.component').then(m => m.SignupComponent) },
     {
         path: 'about', title: 'A propos', loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent),
         //https://angular.dev/guide/routing/common-router-tasks#nesting-routes

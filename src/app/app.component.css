@@ -130,6 +130,7 @@ menu {
 
 
 footer {
+    position: relative;
     grid-area: footer;
     border-block-start: solid 1px;
     grid-auto-flow: column;
