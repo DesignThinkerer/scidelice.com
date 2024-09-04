@@ -3,12 +3,12 @@
     min-height: 100vh;
     grid:
         "header" max-content "main" 1fr "footer" max-content / 1fr;
-        align-items: center;
+    align-items: center;
 }
 
 header {
-    min-width:0;
-    padding-inline:var(--bleed-margin);
+    min-width: 0;
+    padding-inline: var(--bleed-margin);
     background-color: var(--color-bg-default);
     grid-area: header;
     position: sticky;
@@ -21,18 +21,20 @@ header {
     justify-content: space-between;
     border-bottom: solid var(--border-size) var(--color-accent);
 
-    :link,:link:visited{
+    :link,
+    :link:visited {
         text-decoration: none;
-        color:var(--color-default);
+        color: var(--color-default);
         display: inline-flex;
-        gap:.5rem;
+        gap: .5rem;
     }
 
     figure {
-        margin:0;
-        display:flex;
-        gap:.5rem;
-        color:var(--color-default);
+        margin: 0;
+        display: flex;
+        gap: .5rem;
+        color: var(--color-default);
+
         img {
             background-color: var(--color-default);
             border-radius: 1lh;
@@ -77,31 +79,34 @@ menu {
     display: flex;
     list-style: none;
     gap: 1ch;
-    padding:0;
-    
+    padding: 0;
+
     a {
         text-decoration: none;
         color: var(--color-default);
     }
 
 
-    [aria-haspopup="true"]{
+    [aria-haspopup="true"] {
         display: inline-flex;
         align-items: center;
-        gap:.5ch;
-        &:after{
-            content:"";
+        gap: .5ch;
+
+        &:after {
+            content: "";
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0.2 0.5 13.63 8.32'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M 7 6 L 12.4 0.5 L 13.8 1.9 L 7.7 8.1 L 7 8.8 L 6.3 8.1 L 0.2 1.9 L 1.6 0.5 L 7 6 Z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: center;
-            height:1lh;
-            width:1ch;
+            height: 1lh;
+            width: 1ch;
             display: block;
         }
-        &:focus-within:after{
-            transform:rotate(.5turn);
+
+        &:focus-within:after {
+            transform: rotate(.5turn);
         }
     }
+
     [role="menu"] {
         list-style: none;
 
@@ -109,7 +114,7 @@ menu {
             position: absolute;
             left: 0;
             top: 100%;
-            border-block-end:solid var(--border-size);
+            border-block-end: solid var(--border-size);
             width: 100%;
             background-color: var(--color-bg-default);
             display: grid;
@@ -137,7 +142,7 @@ footer {
     display: grid;
     grid-auto-columns: fit-content;
     align-content: center;
-    padding-inline:var(--bleed-margin);
+    padding-inline: var(--bleed-margin);
 
     p {
         max-inline-size: 50ch;
@@ -147,7 +152,7 @@ footer {
 main {
     grid-area: main;
     height: 100%;
-    margin-inline:var(--bleed-margin);
+    margin-inline: var(--bleed-margin);
     /* https://css-tricks.com/preventing-a-grid-blowout/ */
     min-width: 0;
 }

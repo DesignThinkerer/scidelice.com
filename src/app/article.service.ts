@@ -39,33 +39,20 @@ export class ArticleService {
         id: 3,
         title: "Art Fractal sur Café",
         summary: "Découvrez comment des motifs fractals peuvent être créés dans votre tasse de café en utilisant une technique de versage contrôlée. Parfait pour les amateurs d'art et de mathématiques!",
-        img: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Fractal_cafe_art.jpg",
+        img: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Mandel_zoom_04_seehorse_tail.jpg",
         img_alt: "Art fractal sur café",
         caption: "Photo : Wikimedia Commons",
-        url: "https://fractalcoffeeart.com",
+        url: "https://live.staticflickr.com/4151/4993596268_6b8436e654_b.jpg",
         tags: [
           { id: 5, name: "fractales" },
           { id: 6, name: "café" }
         ]
       },
       {
-        id: 4,
-        title: "Céréales Luminescentes",
-        summary: "Un petit-déjeuner qui brille dans le noir! Ces céréales luminescentes utilisent des ingrédients biochimiques sûrs pour créer une lueur captivante. Un mélange parfait de chimie et de cuisine!",
-        img: "https://example.com/glowing-cereal.jpg",
-        img_alt: "Céréales Luminescentes",
-        caption: "Photo : Glowing Cereal Inc.",
-        url: "https://glowbreakfast.com",
-        tags: [
-          { id: 7, name: "céréales" },
-          { id: 8, name: "bioluminescence" }
-        ]
-      },
-      {
         id: 5,
         title: "Impression 3D de Nourriture",
         summary: "L'avenir de la cuisine est ici avec l'impression 3D! Explorez comment les chefs utilisent la technologie pour créer des plats impossibles à réaliser à la main.",
-        img: "https://example.com/3d-printed-food.jpg",
+        img: "https://live.staticflickr.com/3942/15470638668_45af8e4813_b.jpg",
         img_alt: "Impression 3D de Nourriture",
         caption: "Photo : 3D Print Kitchen",
         url: "https://3dprintedfoods.com",
@@ -78,9 +65,9 @@ export class ArticleService {
         id: 6,
         title: "Les Cristaux Comestibles",
         summary: "Les cristaux ne sont plus seulement pour la décoration! Apprenez comment faire pousser des cristaux de sucre comestibles pour décorer vos desserts de façon élégante.",
-        img: "https://example.com/edible-crystals.jpg",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Quartz_oisan.jpg/800px-Quartz_oisan.jpg",
         img_alt: "Cristaux comestibles",
-        caption: "Photo : Crystal Candy Co.",
+        caption: "Photo : wikimedia.",
         url: "https://crystalcandymaking.com",
         tags: [
           { id: 11, name: "cristaux" },
