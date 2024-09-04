@@ -1,4 +1,4 @@
-<section>
+<section class="hero">
     <!-- Alternative tagline: Apprenons ensemble, une bouchée à la fois! -->
     <h2>Découvrer une sélection de <a href="">recettes</a>, <a href="">techniques</a>, <a href="">principes</a>, et plus encore!</h2>
     <form role="search" action="./search/" aria-label="Hero nav" (submit)="$event.preventDefault()">
@@ -12,17 +12,19 @@
         <button type="submit" title="Lancer une recherche">
           <span class="material-symbols-outlined" aria-hidden="true">search</span>
         </button>
+        <output>
+          {{ filteredArticles.length }} article{{ filteredArticles.length > 1 ? "s" : "" }} trouvé{{ filteredArticles.length > 1 ? "s" : "" }}
+        </output>
       </form>
-      {{ filteredArticles.length }} article{{ filteredArticles.length > 1 ? "s" : "" }} trouvé{{ filteredArticles.length > 1 ? "s" : "" }}
 </section>
 <section>
-    Recette du jour
+    <h2>Recette du jour</h2>
 </section>
 <section>
-    Idées frigo
+    <h2>Idées frigo</h2>
 </section>
 <section>
-    Quizinnez!
+    <h2>Quizinnez!</h2>
 </section>
 <!-- 
 <section class="deck" [style]='"--count:"+ (articles.length)'>

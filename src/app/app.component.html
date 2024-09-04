@@ -1,83 +1,261 @@
 <header role="banner">
     <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
-    <figure>
+        <figure>
             <img src="/logo-minimal.svg" alt="logo scidelice.com" loading="eager">
             <figcaption class="tagline">
                 {{ title }}
             </figcaption>
-    </figure>
-</a>
+        </figure>
+    </a>
 
-    <form role="search" action="./search/" aria-label="Main nav">
+    <!-- <form role="search" action="./search/" aria-label="Main nav">
         <input type="search" name="q" title="Saisir une recherche" />
         <button type="submit" title="Lancer une recherche"><span class="material-symbols-outlined"
                 aria-hidden="true">search</span></button>
-    </form>
+    </form> -->
 
     <nav aria-label="Scidélice">
+        <!-- Menubar navigation pattern: https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-navigation -->
         <ul class="menubar-navigation" role="menubar" aria-label="Scidélice">
-            <li role="none">
-                <a role="menuitem" href="#home">
-                  Home
+            <li role="none" >
+                <a role="menuitem" aria-haspopup="true"  aria-expanded="false" [routerLink]="[]" fragment="outils">
+                    Outils
                 </a>
-              </li>
+                <ul role="menu" id="outils" aria-label="Outils">
+                    <li role="none">
+                        <a role="menuitem"   [routerLink]="[]"  fragment="calculer">
+                            Calculer
+                        </a>
+                        <ul role="menu" aria-label="Calculer">
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="conversions">
+                                    Conversions
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="minuteurs">
+                                    Minuteurs
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="nutrition">
+                                    Nutrition
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem"   [routerLink]="[]"  fragment="creer">
+                            Créer
+                        </a>
+                        <ul role="menu" aria-label="Créer">
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="recette">
+                                    Recette
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="principe">
+                                    Principe
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="technique">
+                                    Technique
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem"   [routerLink]="[]"  fragment="creer">
+                            Communauté
+                        </a>
+                        <ul role="menu" aria-label="Communauté">
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="quiz">
+                                    Quiz
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="amis">
+                                    Amis
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="defis">
+                                    Défis
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li role="none" >
+                <a role="menuitem" aria-haspopup="true"  aria-expanded="false" [routerLink]="[]"  fragment="decks">
+                    Decks
+                </a>
+                <ul role="menu" id="decks" aria-label="Decks">
+                    <li role="none">
+                        <a role="menuitem"   [routerLink]="[]"  fragment="recettes">
+                            Recettes
+                        </a>
+                        <ul role="menu" aria-label="Calculer">
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="recette-1">
+                                    Recette 1
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="recette-2">
+                                    Recette 2
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="recette-3">
+                                    Recette 3
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem"   [routerLink]="[]"  fragment="principes">
+                            Principes
+                        </a>
+                        <ul role="menu" aria-label="Principes">
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="principe-1">
+                                    Principe 1
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="principe-2">
+                                    Principe 2
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="principe-3">
+                                    Principe 3
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem"   [routerLink]="[]"  fragment="techniques">
+                            Techniques
+                        </a>
+                        <ul role="menu" aria-label="Techniques">
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="technique-1">
+                                    Technique 1
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="technique-2">
+                                    Technique 2
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="technique-3">
+                                    Technique 3
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li role="none" >
+                <a role="menuitem" aria-haspopup="true"  aria-expanded="false" [routerLink]="[]"  fragment="a-propos">
+                    À propos
+                </a>
+                <ul role="menu" id="menu" aria-label="À propos">
+                    <li role="none">
+                        <a role="menuitem"   [routerLink]="[]"  fragment="info">
+                            Info
+                        </a>
+                        <ul role="menu" aria-label="Info">
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="concept">
+                                    Concept
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="blog">
+                                    Blog
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="presse">
+                                    Presse
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem"   [routerLink]="[]"  fragment="aide">
+                            Aide
+                        </a>
+                        <ul role="menu" aria-label="Aide">
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="questions-réponses">
+                                    Q&A
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="suggestions">
+                                    Suggestions
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" [routerLink]="[]"  fragment="contact">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem"   [routerLink]="[]"  fragment="actu">
+                            Actu
+                        </a>
+                        <ul role="menu" aria-label="Actu">
+                            <!-- <li role="none">
+                                <form role="newsletter" aria-label="Newsletter">
+                                    <label>Abonnez-vous pour être avertis des nouveautés.
+                                        <input type="text" type="email">
+                                        <button type="submit">➡️</button>
+                                    </label>
+                                </form>
+                            </li> -->
+                            <li role="none">
+                                <ul role="menu" aria-label="Réseaux sociaux">
+                                    <li role="menuitem"><a href="https://www.youtube.com/@scidelice">Youtube</a></li>
+                                    <li role="menuitem"><a href="https://www.reddit.com/r/Scidelice" aria-label="Reddit">Reddit</a></li>
+                                    <li role="menuitem"><a href="https://github.com/DesignThinkerer/scidelice.com" aria-label="Github">Github</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <menu>
+                    <button (click)="toggleLogin()" title="{{ isLoggedIn ? 'Déconnexion':'Connexion' }}">
+                        @if (isLoggedIn) {
+                        <a routerLink="/logout"><i class="material-symbols-outlined" aria-hidden="true">logout</i>Déconnexion</a>
+                        }
+                        @else {
+                        <a routerLink="/login"><i class="material-symbols-outlined" aria-hidden="true">login</i>Connexion</a>
+                        }
+                    </button>
+                </menu>
+            </li>
         </ul>
     </nav>
-
-    <nav>
-        <ul>
-            <fieldset>
-                <legend>Choisir un volet:</legend>
-                <div>
-                    <input type="radio" id="huey" name="drone" value="huey" checked />
-                    <label for="huey">Huey</label>
-                </div>
-
-                <div>
-                    <input type="radio" id="dewey" name="drone" value="dewey" />
-                    <label for="dewey">Dewey</label>
-                </div>
-
-                <div>
-                    <input type="radio" id="louie" name="drone" value="louie" />
-                    <label for="louie">Louie</label>
-                </div>
-            </fieldset>
-        </ul>
-        <section id="outils">
-
-        </section>
-        <section id="decks">
-
-        </section>
-        <section id="a-propos">
-
-        </section>
-        <section id="profil">
-
-        </section>
-        <!-- 
-        <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">À propos</a>
-        <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Contact</a>
-        <a routerLink="/ingredients" routerLinkActive="active" ariaCurrentWhenActive="page">Ingrédients</a> -->
-    </nav>
-
-    <menu>
-        <input type="checkbox" role="switch" title="Basculer le thème" />
-
-        <button (click)="toggleLogin()" title="{{ isLoggedIn ? 'Déconnexion':'Connexion' }}">
-            @if (isLoggedIn) {
-            <a routerLink="/logout" class="material-symbols-outlined" aria-hidden="true">logout</a>
-            }
-            @else {
-            <a routerLink="/login" class="material-symbols-outlined" aria-hidden="true">login</a>
-            }
-        </button>
-    </menu>
 </header>
+
 <main>
     <router-outlet></router-outlet>
 </main>
+
 <footer>
     <span>
         <h3>A propos de nous</h3>
@@ -98,4 +276,6 @@
         </ul>
     </span>
     <!-- <a href="{{ footerUrl }}">{{ footerLink }}</a> -->
+
+    <input type="checkbox" role="switch" title="Basculer le thème" />
 </footer>

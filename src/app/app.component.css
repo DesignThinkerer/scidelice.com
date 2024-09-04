@@ -3,9 +3,11 @@
     min-height: 100vh;
     grid:
         "header" max-content "main" 1fr "footer" max-content / 1fr;
+        align-items: center;
 }
 
 header {
+    padding-inline:var(--bleed-margin);
     background-color: var(--color-bg-default);
     grid-area: header;
     position: sticky;
@@ -18,7 +20,17 @@ header {
     justify-content: space-between;
     border-bottom: solid var(--border-size) var(--color-accent);
 
+    :link{
+        text-decoration: none;
+        color:inherit;
+        display: inline-flex;
+        gap:.5rem;
+    }
+
     figure {
+        margin:0;
+        display:flex;
+        gap:.5rem;
         img {
             background-color: var(--color-default);
             border-radius: 1lh;
@@ -70,32 +82,59 @@ menu {
 
 
 
-[role="search"] {
-    flex-grow: 1;
+
+
+[role="menubar"] {
     display: flex;
-    justify-content: end;
-
-
-    & [type="submit"] {
-        background: unset;
-        border: unset;
+    list-style: none;
+    gap: 1ch;
+    
+    a {
+        text-decoration: none;
+        color: var(--color-default);
     }
 
-    & input {
-        border-radius: 5pt;
-        border-width: 1px;
-        border: var(--border-default);
-        transition: flex .2s ease-in-out;
-        flex: 0;
-        padding: .5ch;
 
-        &:focus {
-            flex: 1;
+    [aria-haspopup="true"]{
+        display: inline-flex;
+        align-items: center;
+        gap:.5ch;
+        &:after{
+            content:"";
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0.2 0.5 13.63 8.32'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M 7 6 L 12.4 0.5 L 13.8 1.9 L 7.7 8.1 L 7 8.8 L 6.3 8.1 L 0.2 1.9 L 1.6 0.5 L 7 6 Z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            height:1lh;
+            width:1ch;
+            display: block;
+        }
+        &:focus-within:after{
+            transform:rotate(.5turn);
         }
     }
+    [role="menu"] {
+        list-style: none;
 
-    & label {
-        inline-size: max-content;
+        &:not(& *) {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            border-block-end:solid var(--border-size);
+            width: 100%;
+            background-color: var(--color-bg-default);
+            display: grid;
+            grid-auto-flow: column;
+        }
+
+        &[aria-label="Réseaux sociaux"] {
+            display: flex;
+            gap: 1ch;
+        }
+
+        /* Hide menu that are not child of a list item containing a focused menuitem */
+        &:not(li:has([role="menuitem"]:focus, [aria-expanded="true"]) [role="menu"]) {
+            display: none;
+        }
     }
 }
 
@@ -106,8 +145,9 @@ footer {
     display: grid;
     grid-auto-columns: fit-content;
     align-content: center;
-    padding-inline:50px;
-    p{
+    padding-inline:var(--bleed-margin);
+
+    p {
         max-inline-size: 50ch;
     }
 }
@@ -115,4 +155,7 @@ footer {
 main {
     grid-area: main;
     height: 100%;
+    margin-inline:var(--bleed-margin);
+    /* https://css-tricks.com/preventing-a-grid-blowout/ */
+    min-width: 0;
 }
