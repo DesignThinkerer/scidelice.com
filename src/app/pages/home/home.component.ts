@@ -15,6 +15,8 @@ export class HomeComponent {
   articleService = inject(ArticleService);
 
   articles = this.articleService.getArticles();
+
+  randomArticle = this.articleService.getRandomArticle();
   // Filter the articles based on user input
   userInputValue = '';
 

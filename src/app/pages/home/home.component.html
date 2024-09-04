@@ -1,6 +1,6 @@
 <section class="hero">
     <!-- Alternative tagline: Apprenons ensemble, une bouchée à la fois! -->
-    <h2>Découvrer une sélection de <a href="">recettes</a>, <a href="">techniques</a>, <a href="">principes</a>, et plus encore!</h2>
+    <h2>Découvrez une sélection de <a href="">recettes</a>, <a href="">techniques</a>, <a href="">principes</a>, et plus encore!</h2>
     <form role="search" action="./search/" aria-label="Hero nav" (submit)="$event.preventDefault()">
         <input
           #userInput
@@ -12,13 +12,46 @@
         <button type="submit" title="Lancer une recherche">
           <span class="material-symbols-outlined" aria-hidden="true">search</span>
         </button>
-        <output>
-          {{ filteredArticles.length }} article{{ filteredArticles.length > 1 ? "s" : "" }} trouvé{{ filteredArticles.length > 1 ? "s" : "" }}
-        </output>
+
+        @if (userInput.value.length > 0) {
+          <output>
+            {{ filteredArticles.length }} article{{ filteredArticles.length > 1 ? "s" : "" }} trouvé{{ filteredArticles.length > 1 ? "s" : "" }}
+          </output>
+        } 
       </form>
 </section>
+@if(userInput.value.length > 0  && filteredArticles.length > 0){
+  <section>
+    <h2>Résultats</h2>
+    @for (article of filteredArticles; track article) {
+        <article [style]='"--index:"+ $index'>
+          <h2>{{ article.title }}</h2>
+          <figure>
+            <img src="{{ article.img }}" alt="{{ article.img_alt }}" />
+            <figcaption>{{ article.caption }}</figcaption>
+          </figure>
+          <p>{{ article.summary }}</p>
+          <a href="{{ article.url }}" class="internal">
+            <span>Lire</span><span class="material-symbols-outlined">open_in_new</span>
+          </a>
+        </article>
+      } 
+  </section>
+}
 <section>
-    <h2>Recette du jour</h2>
+    <h2>Recette au hasard</h2>
+
+    <article>
+      <h2>{{ randomArticle.title }}</h2>
+      <figure>
+        <img src="{{ randomArticle.img }}" alt="{{ randomArticle.img_alt }}" />
+        <figcaption>{{ randomArticle.caption }}</figcaption>
+      </figure>
+      <p>{{ randomArticle.summary }}</p>
+      <a href="{{ randomArticle.url }}" class="internal">
+        <span>Lire</span><span class="material-symbols-outlined">open_in_new</span>
+      </a>
+    </article>
 </section>
 <section>
     <h2>Idées frigo</h2>
@@ -36,26 +69,8 @@
                 <figcaption>{{ article.caption }}</figcaption>
             </figure>
             <p>{{ article.summary }}</p>
-            <a href="{{ article.url }}" class="internal"><span>Read more</span><span class="material-symbols-outlined">open_in_new</span></a>
+            <a href="{{ article.url }}" class="internal"><span>Lire</span><span class="material-symbols-outlined">open_in_new</span></a>
         </article>
     }
 </section>
 -->
-
-<!-- Note: Ajouter content-visibility: auto; pour charger la liste plus rapidemment -->
-<section>
-    @for (article of filteredArticles; track article) {
-        <article [style]='"--index:"+ $index'>
-          <h2>{{ article.title }}</h2>
-          <figure>
-            <img src="{{ article.img }}" alt="{{ article.img_alt }}" />
-            <figcaption>{{ article.caption }}</figcaption>
-          </figure>
-          <p>{{ article.summary }}</p>
-          <a href="{{ article.url }}" class="internal">
-            <span>Read more</span><span class="material-symbols-outlined">open_in_new</span>
-          </a>
-        </article>
-      }
-      
-</section>

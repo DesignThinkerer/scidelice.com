@@ -238,7 +238,7 @@
             </li>
             <li>
                 <menu>
-                    <button (click)="toggleLogin()" title="{{ isLoggedIn ? 'Déconnexion':'Connexion' }}">
+                    <button  title="{{ isLoggedIn ? 'Déconnexion':'Connexion' }}">
                         @if (isLoggedIn) {
                         <a routerLink="/logout"><i class="material-symbols-outlined" aria-hidden="true">logout</i>Déconnexion</a>
                         }
@@ -266,7 +266,7 @@
             derrière la cuisine en partageant des connaissances et des astuces culinaires basées sur la science.
         </p>
     </span>
-    <span>
+    <!-- <span>
         <h3>En savoir plus</h3>
         <ul>
             <li><a href="">Nous contacter</a></li>
@@ -274,7 +274,7 @@
             <li><a href="">Conditions d'utilisations</a></li>
             <li><a href="">Politique de Confidentialité</a></li>
         </ul>
-    </span>
+    </span> -->
     <!-- <a href="{{ footerUrl }}">{{ footerLink }}</a> -->
 
     <input type="checkbox" role="switch" title="Basculer le thème" />

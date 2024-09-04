@@ -94,4 +94,8 @@ export class ArticleService {
   getArticle(id: number) {
     return this.articles.find(article => article.id === id);
   }
+  getRandomArticle(): ArticleModel {
+    const randomIndex = Math.floor(Math.random() * this.articles.length);
+    return this.articles[randomIndex];
+  }
 }

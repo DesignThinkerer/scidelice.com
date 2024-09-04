@@ -40,7 +40,7 @@
         --border-default: solid var(--border-size);
 
         /* Spacing */
-        --bleed-margin: 100px;
+        --bleed-margin: clamp(2rem, 10vw, 100px);
 
         /* Font scale */
         --font-size-0: 0;
@@ -93,6 +93,7 @@
     h5,
     h6 {
         text-wrap: balance;
+        max-width: 50ch;
     }
 
     p {
@@ -112,7 +113,18 @@
         }
     }
 
-
+    :where(:link) {
+        text-decoration: underline;
+        cursor: pointer;
+    
+        &:hover {
+            color: var(--color-accent);
+        }
+    
+        &:visited {
+            color: var(--color-link);
+        }
+    }
 }
 
 
@@ -148,6 +160,12 @@
         all: unset;
         cursor: pointer;
         font-size: var(--target-size-enhanced);
+        width:fit-content;
+        height:fit-content;
+
+        position:absolute;
+        right:0;
+        bottom:0;
 
         &:checked {
             --_icon-state: var(--icon-switch-checked);
@@ -171,8 +189,7 @@
         justify-content: center;
         width:fit-content;
         margin:auto;
-    
-    
+        
         & [type="submit"] {
             background: unset;
             border: unset;
@@ -185,6 +202,7 @@
             transition: flex .2s ease-in-out;
             flex: 0;
             padding: .5ch;
+            min-width: 50ch;
     
             &:focus {
                 flex: 1;
@@ -196,15 +214,17 @@
         }
     }
 
-    figure {
+    :where(figure) {
         margin: 0;
+        text-align:center;
 
-        img {
+        :where(img) {
             width: 100%;
+            max-width: 500px;
             object-fit: cover;
         }
 
-        figcaption {
+        :where(figcaption) {
             font-style: italic;
         }
     }

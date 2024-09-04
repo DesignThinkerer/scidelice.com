@@ -1,5 +1,8 @@
 .hero{
     text-align: center;
+    h2{
+        margin-inline: auto;
+    }
 }
 .deck {
     display: grid;
@@ -40,6 +43,7 @@
 
             img {
                 width: 100%;
+                max-width: 500px;
                 object-fit: cover;
                 /* aspect-ratio: 1; */
             }
