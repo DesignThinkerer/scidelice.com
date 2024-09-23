@@ -4,6 +4,9 @@
         margin-inline: auto;
     }
 }
+article{
+    padding: 2rem;
+}
 .deck {
     display: grid;
     height: 100%;
@@ -25,7 +28,6 @@
         height: 600px;
         max-height: 50vh;
         outline: solid 1px;
-        padding: 2rem;
         transform-origin: 50% 100%;
         transform:rotate(var(--offset-rotation)) translate(var(--offset-translation));
         transition: all 0.5s;
